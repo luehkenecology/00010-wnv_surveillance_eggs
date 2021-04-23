@@ -22,4 +22,5 @@ data_greece2 <- data_greece %>%
 # percentage 
 data_greece2 %>%
   group_by(classified.as) %>%
-  summarise(x = sum(sum)/nrow(data_greece)*100)
+  summarise(n =sum(sum),
+            perc = sum(sum)/nrow(data_greece)*100)
