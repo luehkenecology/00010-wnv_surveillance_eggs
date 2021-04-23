@@ -6,3 +6,8 @@ setwd(PROJHOME)
 
 # read table greece
 data_greece <- read.table("data/processed/wnv_results_eggs_greece.csv", header = T, sep = ";")
+
+# libraries
+library(magrittr)
+library(dplyr)
+
