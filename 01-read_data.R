@@ -11,6 +11,9 @@ data_greece <- read.table("data/processed/wnv_results_eggs_greece.csv", header =
 library(magrittr)
 library(dplyr)
 
+# number of tested eggs
+nrow(data_greece)
+
 # 
 data_greece2 <- data_greece %>%
   group_by(Regional.Unit, Municipality, Village, classified.as) %>%
