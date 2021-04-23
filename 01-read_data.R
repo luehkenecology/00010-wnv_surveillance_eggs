@@ -16,11 +16,17 @@ nrow(data_greece)
 
 # 
 data_greece2 <- data_greece %>%
-  group_by(Regional.Unit, Municipality, Village, classified.as) %>%
+  group_by(Regional.Unit, Municipality, Village, classified.as, week) %>%
   summarise(sum = length(classified.as))
   
 # percentage 
 data_greece2 %>%
   group_by(classified.as) %>%
   summarise(n =sum(sum),
+            perc = sum(sum)/nrow(data_greece)*100)
+
+#
+data_greece3 <- data_greece2 %>%
+  group_by(Village, week, classified.as) %>%
+  summarise(n = sum(sum),
             perc = sum(sum)/nrow(data_greece)*100)
